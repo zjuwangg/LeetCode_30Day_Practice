@@ -45,8 +45,9 @@ public class AddBinary{
 		while(i < aLen || i < bLen || carry != 0){
 			int t_a = (i < aLen)?(int)(a.charAt(aLen - 1 -i) - '0'):0;
 			int t_b = (i < bLen)?(int)(b.charAt(bLen - 1 -i) - '0'):0;
+			res = (t_a + t_b + carry)%2 + res ;
 			carry = (t_a + t_b + carry)/2;
-			res = (t_a + t_b + carry)%2 + res;
+			i ++;
 		}
 		return res;
 	}
